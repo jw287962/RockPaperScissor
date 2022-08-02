@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ROCK PAPER SCISSORS SHOOT!!</h1>
+    <p class = gameText>Type Rock Paper or Scissor!</p>
+   <!--prompt rock paper or scissor from user (text input for now)-->
+   <script>
+    function getComputerChoice(){
+        let randomNum = Math.floor(Math.random()*10)
+        if(randomNum>7)
+        return "Rock";
+        else if(randomNum>3)
+        return "Paper";
+        else 
+        return "Scissor";
+    }
+
+    let computerSelection = getComputerChoice();
+    let playerSelection = prompt("Rock, Paper, or Scissor","Rock");
+    
+</script>
+
+    <!--make a computer choose rock paper or scissor-->
+   
+    
+</body>
+</html>
