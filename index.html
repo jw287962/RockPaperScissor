@@ -13,6 +13,11 @@
     <!--make a computer choose rock paper or scissor-->
      <!--prompt rock paper or scissor from user (text input for now)-->
    <script>
+
+
+let gamesLost = 0;
+let gamesWon = 0;
+let playedRounds = 0;
     function getComputerChoice(){
         let randomNum = Math.floor(Math.random()*10)
         if(randomNum>7)
@@ -23,24 +28,58 @@
         return "Scissor";
     }
 
-    let computerSelection = getComputerChoice();
-    let playerSelection = prompt("Rock, Paper, or Scissor","Rock");
-    
+  
 
 
 /* <!--determine wINNER OF GAME-->*/
     function determineWinner(computerSelection,playerSelection){
+        
          playerSelection = playerSelection.toLowerCase();
          computerSelection = computerSelection.toLowerCase();
-         if (playerSelection === computerSelection)
-         return "Tied Game";
+
+
+         playedRounds++;
+         if(playerSelection === 'rock' && computerSelection === 'scissor'){
+            gamesWon++;
+            return "Game Result: WIN | ROCK BEATS SCISSOR";
+            }
+        else if(playerSelection === 'scissor' && computerSelection === 'paper'){
+              gamesWon++;
+              return "Game Result: WIN | SCISSOR BEATS PAPER";
+        }
+            else  if(playerSelection === 'paper' && computerSelection === 'rock'){
+                gamesWon++;
+                return "Game Result: WIN | PAPER BEATS ROCK" ;
+            }
+         else if (playerSelection === computerSelection)
+             return "Tied Game";
          else 
-         return "Game Result: Won or Lose";
+            return "Game Result: LOSE";
         
     }
-    let result = document.getElementById('result'); 
+    function game(){
+       gamesLost = 5 - gamesWon;
+        if(gamesWon > 2){
+            return 'YOU WON THE GAME --> You Won ' + gamesWon + ' out of 5 games';
+        }
+        else{
+            return 'You LOST THE GAME --> You Lost ' + gamesLost + ' out of 5 games';
+        }
+    }
+
+    
+    for (let i = 0; i < 5; i++) {
+        let computerSelection = getComputerChoice();
+    let playerSelection = prompt("Rock, Paper, or Scissor","Rock");
+   
+        let result = document.getElementById('result'); 
     console.log(result)
     result.innerHTML = determineWinner(computerSelection,playerSelection);
+   if (i ===4){
+   result.innerHTML = game();
+   }
+}
+   
 </script>
    
    
