@@ -8,8 +8,10 @@
 </head>
 <body>
     <h1>ROCK PAPER SCISSORS SHOOT!!</h1>
-    <p class = gameText>Type Rock Paper or Scissor!</p>
-   <!--prompt rock paper or scissor from user (text input for now)-->
+    <p class = 'gameText'>Type Rock Paper or Scissor!</p>
+    <p id = 'result'>Game Result: Awaiting</p>
+    <!--make a computer choose rock paper or scissor-->
+     <!--prompt rock paper or scissor from user (text input for now)-->
    <script>
     function getComputerChoice(){
         let randomNum = Math.floor(Math.random()*10)
@@ -24,9 +26,23 @@
     let computerSelection = getComputerChoice();
     let playerSelection = prompt("Rock, Paper, or Scissor","Rock");
     
-</script>
 
-    <!--make a computer choose rock paper or scissor-->
+
+/* <!--determine wINNER OF GAME-->*/
+    function determineWinner(computerSelection,playerSelection){
+         playerSelection = playerSelection.toLowerCase();
+         computerSelection = computerSelection.toLowerCase();
+         if (playerSelection === computerSelection)
+         return "Tied Game";
+         else 
+         return "Game Result: Won or Lose";
+        
+    }
+    let result = document.getElementById('result'); 
+    console.log(result)
+    result.innerHTML = determineWinner(computerSelection,playerSelection);
+</script>
+   
    
     
 </body>
