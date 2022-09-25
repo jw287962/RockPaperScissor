@@ -1,0 +1,118 @@
+@import url('https://fontlibrary.org//face/echotopia');
+body {
+    margin: 0px;
+    background-color: rgb(186, 238, 238);
+    font-size: larger;
+}
+.body{
+    display: flex;
+    flex-direction: column;
+   
+   
+    align-content: stretch;
+    
+    
+}
+div, .rps{
+    display: flex;
+   
+}
+.container {
+    display: flex;
+    flex-direction: column;
+ 
+    
+ 
+}
+
+.header{
+    background-color: black;
+  
+    color: white;
+    font-weight: bold;
+    display:flex;
+    font-family: 'echotopia', sans-serif;
+    justify-content: center;
+}
+#gametext{
+   
+    align-items: center;
+    font-size: xx-large;
+}
+
+
+.rps,.body{
+    margin: 20px;
+}
+
+.rps {
+    gap: 10px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+img, button{
+  scale: 1.1;
+   
+
+}
+
+.rpspic{
+   
+  
+
+    
+    
+    border-color: white;
+    
+}
+.rpspic, .scoreboard{
+    border-style: solid ;
+    border-radius: 10px;
+    align-items: center;
+    border-width: 5px;
+}
+button{
+   padding: 0; border: 0; background: transparent;
+   
+
+    display: flex;
+  padding: 0px;
+  border-width: 0px;
+margin: 10px;
+}
+.scoreContainer{
+    display: flex;
+    justify-content: center;
+    
+}
+.scoreboard{
+    background-color: black;
+    font-family: 'echotopia', sans-serif;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    scale: 0.
+
+}
+
+#scoreboard{
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    justify-content: space-between;
+  
+}
+
+#scoreboardwin{
+     color: lightseagreen;
+}
+
+#scoreboardloss{
+    color: red;
+}
