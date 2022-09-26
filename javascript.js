@@ -11,7 +11,7 @@ let playerChoice ='';
  
    let scoreWins = document.querySelector('#scoreboardwin');
    let scoreloss = document.querySelector('#scoreboardloss');
-
+   let scoreFinal = document.querySelector('#scoreboard');
     let playerSelection = document.querySelectorAll('button')
 
     playerSelection.forEach(button => 
@@ -76,17 +76,23 @@ let playerChoice ='';
          else 
          {
             gamesLost++;
-            scoreloss.textContent = `Wins: ${gamesLost}`;
+            scoreloss.textContent = `Loss: ${gamesLost}`;
             return `Game Result: LOSE Computer's ${computerSelection} beats ${playerSelection}`
          }
     }
     function game(){
        
         if(gamesWon === 5){
+            scoreFinal.textContent = `YOU WON! 
+            \n You Won ${gamesWon} games`;
             return 'YOU WON THE GAME --> You Won ' + gamesWon + ' games';
+           
         }
         else{
-            return 'You LOST THE GAME --> You Lost ' + gamesLost + ' games';
+            scoreFinal.textContent = `YOU LOST!
+             \n You LOST ${gamesLost} games`;
+             
+            return 'You LOST THE GAME --> \n You Lost ' + gamesLost + ' games';
         }
     }
 

@@ -13,7 +13,7 @@ body {
     
     
 }
-div, .rps{
+div, .rps, #result{
     display: flex;
    
 }
@@ -115,4 +115,11 @@ margin: 10px;
 
 #scoreboardloss{
     color: red;
+}
+
+.result{
+    display: flex;
+  border-style:solid;
+  justify-content: center;
+  align-content: center;
 }
